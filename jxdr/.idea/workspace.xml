@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c687615-a1ef-4243-869d-89bdb52a1dd0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/../jkafka/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/../jkafka/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/streams/$global/update/$global/streams/update_cache_2.11/output" afterPath="$PROJECT_DIR$/../jkafka/target/streams/$global/update/$global/streams/update_cache_2.11/output" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/modules/jkafka.iml" afterPath="$PROJECT_DIR$/../jkafka/.idea/modules/jkafka.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/build.sbt" afterPath="$PROJECT_DIR$/../jkafka/build.sbt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/default/jkafka-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/default/jkafka-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/default/jkafka-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/default/jkafka-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-compile-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-compile-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-compile.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-compile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-docs.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-docs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-optional.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-optional.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-plugin.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-pom.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-provided.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-provided.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-runtime-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-runtime-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-runtime.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-runtime.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-scala-tool.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-scala-tool.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-sources.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-sources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-test-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-test-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-test.xml" afterPath="$PROJECT_DIR$/../jkafka/project/target/resolution-cache/reports/default-jkafka-build-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../jkafka/project/target/streams/$global/update/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka.scala" afterPath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sbt_2.10/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sbt_2.10/1.0/resolved.xml.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sbt_2.10/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sbt_2.10/1.0/resolved.xml.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.10/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.10/1.0/resolved.xml.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.10/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.10/1.0/resolved.xml.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.11/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.11/1.0/resolved.xml.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.11/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka$sources_2.11/1.0/resolved.xml.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka_2.11/1.0/resolved.xml.properties" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka_2.11/1.0/resolved.xml.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka_2.11/1.0/resolved.xml.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/com.byzoro/jkafka_2.11/1.0/resolved.xml.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sbt_2.10-default.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sbt_2.10-default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.10-default.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.10-default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-compile-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-compile-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-compile.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-compile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-docs.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-docs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-optional.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-optional.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-plugin.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-pom.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-provided.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-provided.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-runtime-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-runtime-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-runtime.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-runtime.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-scala-tool.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-scala-tool.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-sources.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-sources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-test-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-test-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-test.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka$sources_2.11-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-compile-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-compile-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-compile.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-compile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-docs.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-docs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-optional.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-optional.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-plugin.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-pom.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-provided.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-provided.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-runtime-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-runtime-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-runtime.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-runtime.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-scala-tool.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-scala-tool.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-sources.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-sources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-test-internal.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-test-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-test.xml" afterPath="$PROJECT_DIR$/../jkafka/target/resolution-cache/reports/com.byzoro-jkafka_2.11-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/../jkafka/target/streams/$global/update/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/streams/$global/updateClassifiers/$global/streams/out" afterPath="$PROJECT_DIR$/../jkafka/target/streams/$global/updateClassifiers/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterPath="$PROJECT_DIR$/../jkafka/target/streams/$global/updateSbtClassifiers/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/default/jxdr-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/default/jxdr-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/default/jxdr-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/default/jxdr-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-compile-internal.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-compile-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-compile.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-compile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-docs.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-docs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-optional.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-optional.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-plugin.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-pom.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-provided.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-provided.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-runtime-internal.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-runtime-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-runtime.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-runtime.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-scala-tool.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-scala-tool.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-sources.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-sources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-test-internal.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-test-internal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-test.xml" afterPath="$PROJECT_DIR$/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-jxdr-build-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/$global/streams/out" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="build.sbt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.sbt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jxdr.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="683" column="0" lean-forward="true" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
+              <folding>
+                <element signature="e#14#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>File</find>
+      <find>HTTP_FIRST_REQUEST</find>
+      <find>TCP_COMPLETE</find>
+      <find>IPV4</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/main/scala/jxdr.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="3" />
+    <option name="width" value="1380" />
+    <option name="height" value="724" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jxdr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxdr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxdr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxdr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxdr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxdr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="D:/tool/lang/scala/2.11.8/lib/scala-reflect.jar" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="jxdr" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.30904907" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="lastUpdateTimestamp" value="1501581524297" />
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="jxdr" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="jxdr" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="jxdr-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c687615-a1ef-4243-869d-89bdb52a1dd0" name="Default" comment="" />
+      <created>1501347437876</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501347437876</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="The R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12052">
+          <caret line="525" column="23" lean-forward="true" selection-start-line="525" selection-start-column="23" selection-end-line="525" selection-end-column="23" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11983">
+          <caret line="521" column="17" lean-forward="true" selection-start-line="521" selection-start-column="17" selection-end-line="521" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12029">
+          <caret line="523" column="19" lean-forward="true" selection-start-line="523" selection-start-column="19" selection-end-line="523" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11316">
+          <caret line="492" column="32" lean-forward="true" selection-start-line="492" selection-start-column="32" selection-end-line="492" selection-end-column="32" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14605">
+          <caret line="635" column="34" lean-forward="false" selection-start-line="635" selection-start-column="34" selection-end-line="635" selection-end-column="34" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12765">
+          <caret line="555" column="9" lean-forward="true" selection-start-line="555" selection-start-column="9" selection-end-line="555" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/StructType.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="95" column="11" lean-forward="false" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/IntegerType.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="56" column="12" lean-forward="false" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/AbstractDataType.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/StringType.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/DataTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.alibaba/fastjson/srcs/fastjson-1.2.35-sources.jar!/com/alibaba/fastjson/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="222" column="0" lean-forward="true" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/StructField.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.8-sources.jar!/scala/package.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="683" column="0" lean-forward="true" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7.13 (D:\tool\lang\python\2.7\python.exe) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.30904907" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>jxdr</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.30904907" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>SBT: org.scala-lang:scala-library:2.11.8:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.30904907" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

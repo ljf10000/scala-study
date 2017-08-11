@@ -1,0 +1,7 @@
+# UltraEdit backup file
+*.bak
+*.class
+*.jar
+
+**/project/
+**/target/
