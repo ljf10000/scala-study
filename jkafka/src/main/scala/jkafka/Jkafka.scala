@@ -1,39 +1,11 @@
-/**
-  * Created by l_j_f on 2017-07-24.
-  */
-
-import kafka.serializer.StringDecoder
-
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.streaming._
-import org.apache.spark.streaming.kafka._
-import org.apache.spark.sql.types._
-import org.apache.spark.sql.{Row, SQLContext}
+package jkafka
 
 import jxdr.Jxdr
-
-/*
-object Log extends Serializable {
-//   @transient lazy val log = Logger.getLogger(getClass.getName)
-     var log: PrintWriter = _
-
-     def logger():PrintWriter = {
-	synchronized{
-	     if(log==null) {
-		  log = new PrintWriter(new File("/tmp/liujf-file-netflow"))
-	     }
-   	}
-
-	log
-     }
-}
-*/
-
-/*
-object Log extends Serializable{
-    @transient lazy val log = Logger.getLogger(getClass.getName)
-}
-*/
+import kafka.serializer.StringDecoder
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.{Row, SQLContext}
+import org.apache.spark.streaming.kafka.KafkaUtils
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object Jkafka {
     def main(args: Array[String]) {
@@ -69,5 +41,3 @@ object Jkafka {
         ssc.awaitTermination()
     }
 }
-
-
