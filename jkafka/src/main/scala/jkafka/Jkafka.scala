@@ -34,7 +34,7 @@ object Jkafka {
             //val rowRdd = rdd.map(pair => Jxdr(pair._2))
             val df = sqlContext.createDataFrame(rowRdd, Jxdr.SCHEMA)
 
-            df.write.parquet("./parquet")
+            df.write.parquet(savePath)
         }
 
         ssc.start()

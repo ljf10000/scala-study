@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c687615-a1ef-4243-869d-89bdb52a1dd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka/Jkafka.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka.scala" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/modules/jkafka-build.iml" afterPath="$PROJECT_DIR$/../jkafka/.idea/modules/jkafka-build.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/modules/jkafka.iml" afterPath="$PROJECT_DIR$/../jkafka/.idea/modules/jkafka.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka/Jkafka.scala" afterPath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka/Jkafka.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/jxdr.scala" afterPath="$PROJECT_DIR$/src/main/scala/jxdr/Jxdr.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="build.sbt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="92">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="Jxdr.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr/Jxdr.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="368">
+              <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
                 <element signature="e#14#100#0" expanded="true" />
               </folding>
@@ -149,7 +149,7 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="jxdr" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.30904907" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -556,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/jxdr/Jxdr.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="368">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="e#14#100#0" expanded="true" />
           </folding>
@@ -566,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -581,7 +581,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.30904907" />
               </list>
             </option>
           </splitter-proportions>
@@ -593,7 +593,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.30904907" />
               </list>
             </option>
           </splitter-proportions>
@@ -605,7 +605,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.30904907" />
               </list>
             </option>
           </splitter-proportions>
