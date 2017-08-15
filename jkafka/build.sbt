@@ -1,3 +1,5 @@
+//import AssemblyKeys._
+
 name := "jkafka"
 
 version := "1.0"
@@ -21,3 +23,9 @@ libraryDependencies += "com.alibaba" % "fastjson" % "1.2.35"
 
 // https://mvnrepository.com/artifact/org.apache.parquet/parquet-hadoop
 libraryDependencies += "org.apache.parquet" % "parquet-hadoop" % "1.8.2"
+
+assemblyMergeStrategy in assembly := {
+	case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
+	case x         => MergeStrategy.last
+}
+
