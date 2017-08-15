@@ -1,9 +1,116 @@
 package jxdr
 
-import com.alibaba.fastjson.{JSON => Json, JSONArray => Jarray, JSONObject => Jobject}
+import com.alibaba.fastjson.{JSON, JSONArray, JSONObject}
 import org.apache.spark.sql.types._
 
+object Jobject {
+    def apply(jstr: String): JSONObject = try {
+        JSON.parseObject(jstr)
+    } catch {
+        case _: Any => null
+    }
+
+    def jbool(j: JSONObject, k: String): Boolean = try {
+        j.getBooleanValue(k)
+    } catch {
+        case _: Any => false
+    }
+
+    def jint(j: JSONObject, k: String): Int = try {
+        j.getIntValue(k)
+    } catch {
+        case _: Any => 0
+    }
+
+    def jlong(j: JSONObject, k: String): Long = try {
+        j.getLongValue(k)
+    } catch {
+        case _: Any => 0
+    }
+
+    def jdouble(j: JSONObject, k: String): Double = try {
+        j.getDoubleValue(k)
+    } catch {
+        case _: Any => 0.0
+    }
+
+    def jstring(j: JSONObject, k: String): String = try {
+        j.getString(k)
+    } catch {
+        case _: Any => ""
+    }
+
+    def jobject(j: JSONObject, k: String): JSONObject = try {
+        j.getJSONObject(k)
+    } catch {
+        case _: Any => null
+    }
+
+    def jarray(j: JSONObject, k: String): JSONArray = try {
+        j.getJSONArray(k)
+    } catch {
+        case _: Any => null
+    }
+
+    def jexception(s: String): Exception = new Exception(s)
+}
+
+object Jarray {
+    def apply(jstr: String): JSONArray = try {
+        JSON.parseArray(jstr)
+    } catch {
+        case _: Any => null
+    }
+
+    def jbool(j: JSONArray, idx: Int): Boolean = try {
+        j.getBooleanValue(idx)
+    } catch {
+        case _: Any => false
+    }
+
+    def jint(j: JSONArray, idx: Int): Int = try {
+        j.getIntValue(idx)
+    } catch {
+        case _: Any => 0
+    }
+
+    def jlong(j: JSONArray, idx: Int): Long = try {
+        j.getLongValue(idx)
+    } catch {
+        case _: Any => 0
+    }
+
+    def jdouble(j: JSONArray, idx: Int): Double = try {
+        j.getDoubleValue(idx)
+    } catch {
+        case _: Any => 0.0
+    }
+
+    def jstring(j: JSONArray, idx: Int): String = try {
+        j.getString(idx)
+    } catch {
+        case _: Any => ""
+    }
+
+    def jobject(j: JSONArray, idx: Int): JSONObject = try {
+        j.getJSONObject(idx)
+    } catch {
+        case _: Any => null
+    }
+
+    def jarray(j: JSONArray, idx: Int): JSONArray = try {
+        j.getJSONArray(idx)
+    } catch {
+        case _: Any => null
+    }
+
+    def jexception(s: String): Exception = new Exception(s)
+}
+
 class Jxdr {
+
+    import Jobject._
+
     type int8_t = Int
     type int16_t = Int
     type int32_t = Int
@@ -24,27 +131,19 @@ class Jxdr {
 
     case class SmallFile(dbname: String, tbname: String, signature: String)
 
-    private def j2smallfile(j: Jobject): SmallFile = {
-        if (null == j) {
-            return null
-        }
-
-        SmallFile(dbname = j.getString("DbName"),
-            tbname = j.getString("TableName"),
-            signature = j.getString("Signature"))
+    private def j2smallfile(j: JSONObject): SmallFile = {
+        SmallFile(dbname = jstring(j, "DbName"),
+            tbname = jstring(j, "TableName"),
+            signature = jstring(j, "Signature"))
     }
 
     case class BigFile(file: String, size: uint32_t, offset: offset_t, signature: String)
 
-    private def j2bigfile(j: Jobject): BigFile = {
-        if (null == j) {
-            return null
-        }
-
-        BigFile(file = j.getString("File"),
-            size = j.getIntValue("Size"),
-            offset = j.getIntValue("Offset"),
-            signature = j.getString("Signature"))
+    private def j2bigfile(j: JSONObject): BigFile = {
+        BigFile(file = jstring(j, "File"),
+            size = jint(j, "Size"),
+            offset = jint(j, "Offset"),
+            signature = jstring(j, "Signature"))
     }
 
     case class Cert(file: SmallFile,
@@ -58,33 +157,30 @@ class Jxdr {
                     organization_unit_name: String,
                     common_name: String)
 
-    private def j2cert(j: Jobject): Cert = {
-        if (null == j) {
-            return null
+    private def j2cert(j: JSONObject): Cert = {
+        val file = jobject(j, "FileLocation")
+        if (null == file) {
+            throw jexception("cert without file")
         }
 
-        Cert(file = j2smallfile(j.getJSONObject("FileLocation")),
-            version = j.getIntValue("Version"),
-            serial_number = j.getString("SerialNumber"),
-            key_usage = j.getIntValue("KeyUsage"),
-            not_before = j.getLongValue("NotBefore"),
-            not_after = j.getLongValue("NotAfter"),
-            country_name = j.getString("CountryName"),
-            organization_name = j.getString("OrganizationName"),
-            organization_unit_name = j.getString("OrganizationUnitName"),
-            common_name = j.getString("CommonName"))
+        Cert(file = j2smallfile(file),
+            version = jint(j, "Version"),
+            serial_number = jstring(j, "SerialNumber"),
+            key_usage = jint(j, "KeyUsage"),
+            not_before = jlong(j, "NotBefore"),
+            not_after = jlong(j, "NotAfter"),
+            country_name = jstring(j, "CountryName"),
+            organization_name = jstring(j, "OrganizationName"),
+            organization_unit_name = jstring(j, "OrganizationUnitName"),
+            common_name = jstring(j, "CommonName"))
     }
 
-    private def j2certs(a: Jarray): Array[Cert] = {
-        if (null == a) {
-            return null
-        }
-
-        val count = a.size()
+    private def j2certs(j: JSONArray): Array[Cert] = {
+        val count = j.size()
         val certs = new Array[Cert](count)
 
         for (i <- 0 until count) {
-            certs(i) = j2cert(a.getJSONObject(i))
+            certs(i) = j2cert(Jarray.jobject(j, i))
         }
 
         certs
@@ -96,17 +192,23 @@ class Jxdr {
                            cert: Cert,
                            certs: Array[Cert])
 
-    private def j2ssl_endpoint(j: Jobject): SslEndpoint = {
-        if (null == j) {
-            return null
+    private def j2ssl_endpoint(j: JSONObject): SslEndpoint = {
+        val cert = jobject(j, "Cert")
+        if (null == cert) {
+            throw jexception("ssl end point without cert")
+        }
+
+        val certs = jarray(j, "Certs")
+        if (null == certs) {
+            throw jexception("ssl end point without certs")
         }
 
         SslEndpoint(
-            verfy = j.getBooleanValue("Verfy"),
-            verfy_failed_desc = j.getString("VerfyFailedDesc"),
-            verfy_failed_idx = j.getIntValue("VerfyFailedIdx"),
-            cert = j2cert(j.getJSONObject("Cert")),
-            certs = j2certs(j.getJSONArray("Certs")))
+            verfy = jbool(j, "Verfy"),
+            verfy_failed_desc = jstring(j, "VerfyFailedDesc"),
+            verfy_failed_idx = jint(j, "VerfyFailedIdx"),
+            cert = j2cert(cert),
+            certs = j2certs(certs))
     }
 
     case class Conn(proto: uint8_t,
@@ -117,30 +219,35 @@ class Jxdr {
 
     var conn: Conn = _
 
-    def j2Conn(j: Jobject): Unit = {
-        if (null != j) {
-            val proto = j.getIntValue("Proto")
-
-            this.conn = Conn(
-                proto = proto,
-                sport = j.getIntValue("Sport"),
-                dport = j.getIntValue("Dport"),
-                sip = j.getString("Sip"),
-                dip = j.getString("Dip"))
-            this.ip_proto = proto
+    private def j2Conn(j: JSONObject): Unit = {
+        if (null == j) {
+            throw jexception("without conn")
         }
+
+        val proto = jint(j, "Proto")
+
+        conn = Conn(
+            proto = proto,
+            sport = jint(j, "Sport"),
+            dport = jint(j, "Dport"),
+            sip = jstring(j, "Sip"),
+            dip = jstring(j, "Dip"))
+
+        ip_proto = proto
     }
 
     case class ConnTm(start: time_t, stop: time_t)
 
     var conn_tm: ConnTm = _
 
-    def j2ConnTm(j: Jobject): Unit = {
-        if (null != j) {
-            this.conn_tm = ConnTm(
-                start = j.getLongValue("Start"),
-                stop = j.getLongValue("End"))
+    private def j2ConnTm(j: JSONObject): Unit = {
+        if (null == j) {
+            throw jexception("without conn time")
         }
+
+        conn_tm = ConnTm(
+            start = jlong(j, "Start"),
+            stop = jlong(j, "End"))
     }
 
     case class ConnSt(flow_up: uint32_t,
@@ -152,16 +259,19 @@ class Jxdr {
 
     var conn_st: ConnSt = _
 
-    def j2ConnSt(j: Jobject): Unit = {
-        if (null != j) {
-            this.conn_st = ConnSt(
-                flow_up = j.getIntValue("FlowUp"),
-                flow_down = j.getIntValue("FlowDown"),
-                ip_packet_up = j.getIntValue("PktUp"),
-                ip_packet_down = j.getIntValue("PktDown"),
-                ip_frag_up = j.getIntValue("IpFragUp"),
-                ip_frag_down = j.getIntValue("IpFragDown"))
+    private def j2ConnSt(j: JSONObject): Unit = {
+        if (null == j) {
+            throw jexception("without conn st")
         }
+
+        conn_st = ConnSt(
+            flow_up = jint(j, "FlowUp"),
+            flow_down = jint(j, "FlowDown"),
+            ip_packet_up = jint(j, "PktUp"),
+            ip_packet_down = jint(j, "PktDown"),
+            ip_frag_up = jint(j, "IpFragUp"),
+            ip_frag_down = jint(j, "IpFragDown"))
+
     }
 
     case class Tcp(disorder_up: uint32_t,
@@ -189,31 +299,31 @@ class Jxdr {
         }
     }
 
-    var tcp: Tcp = _
+    var tcp: Option[Tcp] = _
 
-    def j2Tcp(j: Jobject): Unit = {
+    private def j2Tcp(j: JSONObject): Unit = {
         if (null != j) {
-            this.tcp = Tcp(
-                disorder_up = j.getIntValue("DisorderUp"),
-                disorder_down = j.getIntValue("DisorderDown"),
-                retran_up = j.getIntValue("RetranUp"),
-                retran_down = j.getIntValue("RetranDown"),
-                synack_to_syn_time = j.getIntValue("SynAckDelay"),
-                ack_to_syn_time = j.getIntValue("AckDelay"),
-                report_flag = j.getIntValue("ReportFlag"),
-                close_reason = j.getIntValue("CloseReason"),
-                first_request_delay = j.getIntValue("FirstRequestDelay"),
-                first_response_delay = j.getIntValue("FirstResponseDely"),
-                window = j.getIntValue("Window"),
-                mss = j.getIntValue("Mss"),
-                count_retry = j.getIntValue("SynCount"),
-                count_retry_ack = j.getIntValue("SynAckCount"),
-                count_ack = j.getIntValue("AckCount"),
-                connect_success = j.getBooleanValue("SessionOK"),
-                handshake12_success = j.getBooleanValue("Handshake12"),
-                handshake23_success = j.getBooleanValue("Handshake23"),
-                open_status = j.getIntValue("Open"),
-                close_status = j.getIntValue("Close"))
+            tcp = Some(Tcp(
+                disorder_up = jint(j, "DisorderUp"),
+                disorder_down = jint(j, "DisorderDown"),
+                retran_up = jint(j, "RetranUp"),
+                retran_down = jint(j, "RetranDown"),
+                synack_to_syn_time = jint(j, "SynAckDelay"),
+                ack_to_syn_time = jint(j, "AckDelay"),
+                report_flag = jint(j, "ReportFlag"),
+                close_reason = jint(j, "CloseReason"),
+                first_request_delay = jint(j, "FirstRequestDelay"),
+                first_response_delay = jint(j, "FirstResponseDely"),
+                window = jint(j, "Window"),
+                mss = jint(j, "Mss"),
+                count_retry = jint(j, "SynCount"),
+                count_retry_ack = jint(j, "SynAckCount"),
+                count_ack = jint(j, "AckCount"),
+                connect_success = jbool(j, "SessionOK"),
+                handshake12_success = jbool(j, "Handshake12"),
+                handshake23_success = jbool(j, "Handshake23"),
+                open_status = jint(j, "Open"),
+                close_status = jint(j, "Close")))
         }
     }
 
@@ -226,8 +336,8 @@ class Jxdr {
                     refer: String,
                     cookie: String,
                     location: String,
-                    file_request: BigFile,
-                    file_response: BigFile,
+                    file_request: Option[BigFile],
+                    file_response: Option[BigFile],
                     time_request: time_t,
                     time_first_response: time_t,
                     time_last_content: time_t,
@@ -242,34 +352,37 @@ class Jxdr {
                     brower: uint8_t,
                     portal: uint8_t)
 
-    var http: Http = _
+    var http: Option[Http] = _
 
-    def j2Http(j: Jobject): Unit = {
+    private def j2Http(j: JSONObject): Unit = {
         if (null != j) {
-            this.http = Http(
-                host = j.getString("Host"),
-                url = j.getString("Url"),
-                host_xonline = j.getString("XonlineHost"),
-                user_agent = j.getString("UserAgent"),
-                content_type = j.getString("ContentType"),
-                refer = j.getString("Refer"),
-                cookie = j.getString("Cookie"),
-                location = j.getString("Location"),
-                file_request = j2bigfile(j.getJSONObject("RequestLocation")),
-                file_response = j2bigfile(j.getJSONObject("ResponseLocation")),
-                time_request = j.getLongValue("RequestTime"),
-                time_first_response = j.getLongValue("FirstResponseTime"),
-                time_last_content = j.getLongValue("LastContentTime"),
-                service_delay = j.getLongValue("ServTime"),
-                content_length = j.getIntValue("ContentLen"),
-                status_code = j.getIntValue("StateCode"),
-                method = j.getIntValue("Method"),
-                version = j.getIntValue("Version"),
-                head_flag = j.getBooleanValue("HeadFlag"),
-                serv_flag = j.getIntValue("ServFlag"),
-                first_request = j.getBooleanValue("RequestFlag"),
-                brower = j.getIntValue("Browser"),
-                portal = j.getIntValue("Portal"))
+            val file_request = jobject(j, "RequestLocation")
+            val file_response = jobject(j, "ResponseLocation")
+
+            http = Some(Http(
+                host = jstring(j, "Host"),
+                url = jstring(j, "Url"),
+                host_xonline = jstring(j, "XonlineHost"),
+                user_agent = jstring(j, "UserAgent"),
+                content_type = jstring(j, "ContentType"),
+                refer = jstring(j, "Refer"),
+                cookie = jstring(j, "Cookie"),
+                location = jstring(j, "Location"),
+                file_request = if (null == file_request) None else Some(j2bigfile(file_request)),
+                file_response = if (null == file_response) None else Some(j2bigfile(file_response)),
+                time_request = jlong(j, "RequestTime"),
+                time_first_response = jlong(j, "FirstResponseTime"),
+                time_last_content = jlong(j, "LastContentTime"),
+                service_delay = jlong(j, "ServTime"),
+                content_length = jint(j, "ContentLen"),
+                status_code = jint(j, "StateCode"),
+                method = jint(j, "Method"),
+                version = jint(j, "Version"),
+                head_flag = jbool(j, "HeadFlag"),
+                serv_flag = jint(j, "ServFlag"),
+                first_request = jbool(j, "RequestFlag"),
+                brower = jint(j, "Browser"),
+                portal = jint(j, "Portal")))
         }
     }
 
@@ -285,22 +398,22 @@ class Jxdr {
                    bye: Boolean,
                    invite: Boolean)
 
-    var sip: Sip = _
+    var sip: Option[Sip] = _
 
-    def j2Sip(j: Jobject): Unit = {
+    private def j2Sip(j: JSONObject): Unit = {
         if (null != j) {
-            this.sip = Sip(
-                calling_number = j.getString("CallingNo"),
-                called_number = j.getString("CalledNo"),
-                session_id = j.getString("SessionId"),
-                call_direction = j.getIntValue("CallDir"),
-                call_type = j.getIntValue("CallType"),
-                hangup_reason = j.getIntValue("HangupReason"),
-                signal_type = j.getIntValue("SignalType"),
-                stream_count = j.getIntValue("StreamCount"),
-                malloc = j.getBooleanValue("Malloc"),
-                bye = j.getBooleanValue("Bye"),
-                invite = j.getBooleanValue("Invite"))
+            sip = Some(Sip(
+                calling_number = jstring(j, "CallingNo"),
+                called_number = jstring(j, "CalledNo"),
+                session_id = jstring(j, "SessionId"),
+                call_direction = jint(j, "CallDir"),
+                call_type = jint(j, "CallType"),
+                hangup_reason = jint(j, "HangupReason"),
+                signal_type = jint(j, "SignalType"),
+                stream_count = jint(j, "StreamCount"),
+                malloc = jbool(j, "Malloc"),
+                bye = jbool(j, "Bye"),
+                invite = jbool(j, "Invite")))
         }
     }
 
@@ -315,21 +428,21 @@ class Jxdr {
                     count_audio: uint16_t,
                     describe_delay: uint32_t)
 
-    var rtsp: Rtsp = _
+    var rtsp: Option[Rtsp] = _
 
-    def j2Rtsp(j: Jobject): Unit = {
+    private def j2Rtsp(j: JSONObject): Unit = {
         if (null != j) {
-            this.rtsp = Rtsp(
-                url = j.getString("Url"),
-                user_agent = j.getString("UserAgent"),
-                server_ip = j.getString("ServerIp"),
-                port_client_start = j.getIntValue("ClientBeginPort"),
-                port_client_end = j.getIntValue("ClientEndPort"),
-                port_server_start = j.getIntValue("ServerBeginPort"),
-                port_server_end = j.getIntValue("ServerEndPort"),
-                count_video = j.getIntValue("VideoStreamCount"),
-                count_audio = j.getIntValue("AudeoStreamCount"),
-                describe_delay = j.getIntValue("ResDelay"))
+            rtsp = Some(Rtsp(
+                url = jstring(j, "Url"),
+                user_agent = jstring(j, "UserAgent"),
+                server_ip = jstring(j, "ServerIp"),
+                port_client_start = jint(j, "ClientBeginPort"),
+                port_client_end = jint(j, "ClientEndPort"),
+                port_server_start = jint(j, "ServerBeginPort"),
+                port_server_end = jint(j, "ServerEndPort"),
+                count_video = jint(j, "VideoStreamCount"),
+                count_audio = jint(j, "AudeoStreamCount"),
+                describe_delay = jint(j, "ResDelay")))
         }
     }
 
@@ -342,19 +455,19 @@ class Jxdr {
                    response_delay: duration_t,
                    trans_duration: duration_t)
 
-    var ftp: Ftp = _
+    var ftp: Option[Ftp] = _
 
-    def j2Ftp(j: Jobject): Unit = {
+    private def j2Ftp(j: JSONObject): Unit = {
         if (null != j) {
-            this.ftp = Ftp(
-                state = j.getIntValue("State"),
-                user = j.getString("User"),
-                pwd = j.getString("CurrentDir"),
-                trans_mode = j.getIntValue("TransMode"),
-                trans_type = j.getIntValue("TransType"),
-                filesize = j.getIntValue("FileSize"),
-                response_delay = j.getLongValue("RspTm"),
-                trans_duration = j.getLongValue("TransTm"))
+            ftp = Some(Ftp(
+                state = jint(j, "State"),
+                user = jstring(j, "User"),
+                pwd = jstring(j, "CurrentDir"),
+                trans_mode = jint(j, "TransMode"),
+                trans_type = jint(j, "TransType"),
+                filesize = jint(j, "FileSize"),
+                response_delay = jlong(j, "RspTm"),
+                trans_duration = jlong(j, "TransTm")))
         }
     }
 
@@ -368,20 +481,20 @@ class Jxdr {
                     recver: String,
                     hdr: String)
 
-    var mail: Mail = _
+    var mail: Option[Mail] = _
 
-    def j2Mail(j: Jobject): Unit = {
+    private def j2Mail(j: JSONObject): Unit = {
         if (null != j) {
-            this.mail = Mail(
-                msg_type = j.getIntValue("MsgType"),
-                status_code = j.getIntValue("RspState"),
-                length = j.getIntValue("Len"),
-                acs_type = j.getIntValue("AcsType"),
-                user = j.getString("UserName"),
-                domain = j.getString("DomainInfo"),
-                sender = j.getString("RecverInfo"),
-                recver = j.getString("RecvAccount"),
-                hdr = j.getString("Hdr"))
+            mail = Some(Mail(
+                msg_type = jint(j, "MsgType"),
+                status_code = jint(j, "RspState"),
+                length = jint(j, "Len"),
+                acs_type = jint(j, "AcsType"),
+                user = jstring(j, "UserName"),
+                domain = jstring(j, "DomainInfo"),
+                sender = jstring(j, "RecverInfo"),
+                recver = jstring(j, "RecvAccount"),
+                hdr = jstring(j, "Hdr")))
         }
     }
 
@@ -397,66 +510,71 @@ class Jxdr {
                    ip: String,
                    ips: Array[String])
 
-    var dns: Dns = _
+    var dns: Option[Dns] = _
 
-    def j2dns_ips(a: Jarray): Array[String] = {
-        if (null == a) {
-            return null
+    private def j2dns_ips(j: JSONArray): Array[String] = {
+        if (null == j) {
+            throw jexception("dns without ips")
         }
 
-        val count = a.size()
+        val count = j.size()
         val ips = new Array[String](count)
 
         for (i <- 0 until count) {
-            ips(i) = a.getString(i)
+            ips(i) = j.getString(i)
         }
 
         ips
     }
 
-    def j2Dns(j: Jobject): Unit = {
+    private def j2Dns(j: JSONObject): Unit = {
         if (null != j) {
-            this.dns = Dns(
-                response_code = j.getIntValue("RspCode"),
-                count_request = j.getIntValue("ReqCount"),
-                count_response_record = j.getIntValue("RspRecordCount"),
-                count_response_auth = j.getIntValue("AuthCnttCount"),
-                count_response_extra = j.getIntValue("ExtraRecordCount"),
-                ip_version = j.getIntValue("IpVersion"),
-                ip_count = j.getIntValue("IpCount"),
-                delay = j.getIntValue("HeadFlag"),
-                domain = j.getString("Domain"),
-                ip = j.getString("Ip"),
-                ips = j2dns_ips(j.getJSONArray("Ips")))
+            dns = Some(Dns(
+                response_code = jint(j, "RspCode"),
+                count_request = jint(j, "ReqCount"),
+                count_response_record = jint(j, "RspRecordCount"),
+                count_response_auth = jint(j, "AuthCnttCount"),
+                count_response_extra = jint(j, "ExtraRecordCount"),
+                ip_version = jint(j, "IpVersion"),
+                ip_count = jint(j, "IpCount"),
+                delay = jint(j, "HeadFlag"),
+                domain = jstring(j, "Domain"),
+                ip = jstring(j, "Ip"),
+                ips = j2dns_ips(jarray(j, "Ips"))))
         }
     }
 
     case class Ssl(reason: uint8_t,
-                   server: SslEndpoint,
-                   client: SslEndpoint)
+                   server: Option[SslEndpoint],
+                   client: Option[SslEndpoint])
 
-    var ssl: Ssl = _
+    var ssl: Option[Ssl] = _
 
-    def j2Ssl(j: Jobject): Unit = {
+    private def j2Ssl(j: JSONObject): Unit = {
         if (null != j) {
-            this.ssl = Ssl(
-                reason = j.getIntValue("FailReason"),
-                server = j2ssl_endpoint(j.getJSONObject("Server")),
-                client = j2ssl_endpoint(j.getJSONObject("Client")))
+            val server = jobject(j, "Server")
+            val client = jobject(j, "Client")
+
+            ssl = Some(Ssl(
+                reason = jint(j, "FailReason"),
+                server = if (null == server) None else Some(j2ssl_endpoint(server)),
+                client = if (null == client) None else Some(j2ssl_endpoint(client))))
         }
     }
 
     // not use json ProtoInfo/ClassId/Proto
-    case class App(status: uint8_t, local: String, file: BigFile)
+    case class App(status: uint8_t, local: String, file: Option[BigFile])
 
-    var app: App = _
+    var app: Option[App] = _
 
-    def j2App(j: Jobject): Unit = {
+    private def j2App(j: JSONObject): Unit = {
         if (null != j) {
-            this.app = App(
-                status = j.getIntValue("Status"),
-                local = j.getString("File"),
-                file = j2bigfile(j.getJSONObject("FileLocation")))
+            val file = jobject(j, "FileLocation")
+
+            app = Some(App(
+                status = Jobject.jint(j, "Status"),
+                local = Jobject.jstring(j, "File"),
+                file = if (null == file) None else Some(j2bigfile(file))))
         }
     }
 
@@ -470,13 +588,13 @@ class Jxdr {
     // not in json
     var ip_proto: uint8_t = Jxdr.TCP
 
-    def j2Base(j: Jobject): Unit = {
-        this.vender = j.getString("Vendor")
-        this.id = j.getIntValue("Id")
-        this.ipv4 = j.getBooleanValue("Ipv4")
-        this.appid = j.getIntValue("Class")
-        this.Type = j.getIntValue("Type")
-        this.time = j.getLongValue("Time")
+    private def j2Root(j: JSONObject): Unit = {
+        this.vender = Jobject.jstring(j, "Vendor")
+        this.id = Jobject.jint(j, "Id")
+        this.ipv4 = Jobject.jbool(j, "Ipv4")
+        this.appid = Jobject.jint(j, "Class")
+        this.Type = Jobject.jint(j, "Type")
+        this.time = Jobject.jlong(j, "Time")
     }
 
     // not use json ConnEx/ServSt/Vpn/Proxy/QQ
@@ -779,34 +897,36 @@ object Jxdr {
         StructField("Rtsp", RTSP_SCHEMA)
     ))
 
-    def apply(jsonxdr: String): Jxdr = {
-        val j = Json.parseObject(jsonxdr)
+    def apply(jsonxdr: String): Option[Jxdr] = {
+        import Jobject._
+
+        val j = Jobject(jsonxdr)
         if (null == j) {
-            return null
+            return None
         }
 
         val x = new Jxdr()
 
-        x.j2App(j)
-        x.j2Base(j)
-        x.j2Conn(j)
-        x.j2ConnSt(j)
-        x.j2ConnTm(j)
+        x.j2Root(j)
+        x.j2App(jobject(j, "App"))
+        x.j2Conn(jobject(j, "Conn"))
+        x.j2ConnSt(jobject(j, "ConnSt"))
+        x.j2ConnTm(jobject(j, "ConnTm"))
 
         if (TCP == x.conn.proto) {
             x.j2Tcp(j)
         }
 
         x.appid match {
-            case HTTP => x.j2Http(j)
-            case DNS => x.j2Dns(j)
-            case SSL => x.j2Ssl(j)
-            case FTP => x.j2Ftp(j)
-            case SIP => x.j2Sip(j)
-            case MAIL => x.j2Mail(j)
-            case RTSP => x.j2Rtsp(j)
+            case HTTP => x.j2Http(jobject(j, "Http"))
+            case DNS => x.j2Dns(jobject(j, "Dns"))
+            case SSL => x.j2Ssl(jobject(j, "Ssl"))
+            case FTP => x.j2Ftp(jobject(j, "Ftp"))
+            case SIP => x.j2Sip(jobject(j, "Sip"))
+            case MAIL => x.j2Mail(jobject(j, "Mail"))
+            case RTSP => x.j2Rtsp(jobject(j, "Rtsp"))
         }
 
-        x
+        Some(x)
     }
 }

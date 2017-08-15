@@ -29,9 +29,9 @@ object Jkafka {
             ssc, kafkaParams, topicsSet)
 
         kds.foreachRDD { rdd =>
-            val sqlContext = new SQLContext(rdd.sparkContext)
             val rowRdd = rdd.map(pair => Row(Jxdr(pair._2)))
             //val rowRdd = rdd.map(pair => Jxdr(pair._2))
+            val sqlContext = new SQLContext(rdd.sparkContext)
             val df = sqlContext.createDataFrame(rowRdd, Jxdr.SCHEMA)
 
             df.write.mode("append").parquet(savePath)

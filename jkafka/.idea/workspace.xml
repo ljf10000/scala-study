@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="414fc68a-7e79-4dc1-bd43-5b60a8c3ddd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/jkafka.iml" afterPath="$PROJECT_DIR$/.idea/modules/jkafka.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" afterPath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/src/main/scala/jxdr/Jxdr.scala" afterPath="$PROJECT_DIR$/../jxdr/src/main/scala/jxdr/Jxdr.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,11 +47,21 @@
       <file leaf-file-name="Jkafka.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="439">
+              <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="54" />
               <folding>
                 <element signature="e#16#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Row.scala" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/Row.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -795,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/Row.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="47" column="6" lean-forward="false" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../jxdr/target/scala-2.11/jxdr_2.11-1.0.jar!/jxdr/Jxdr.class" />
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/catalyst/encoders/RowEncoder.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
@@ -905,10 +906,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/Row.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../jxdr/target/scala-2.11/jxdr_2.11-1.0.jar!/jxdr/Jxdr.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="138" column="6" lean-forward="false" selection-start-line="138" selection-start-column="6" selection-end-line="138" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="439">
+          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="54" />
           <folding>
             <element signature="e#16#32#0" expanded="true" />
           </folding>
