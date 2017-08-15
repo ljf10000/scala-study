@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="414fc68a-7e79-4dc1-bd43-5b60a8c3ddd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" afterPath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/src/main/scala/jxdr/Jxdr.scala" afterPath="$PROJECT_DIR$/../jxdr/src/main/scala/jxdr/Jxdr.scala" />
     </list>
@@ -47,8 +46,8 @@
       <file leaf-file-name="Jkafka.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="54" />
+            <state relative-caret-position="575">
+              <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="49" />
               <folding>
                 <element signature="e#16#32#0" expanded="true" />
               </folding>
@@ -924,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="54" />
+        <state relative-caret-position="575">
+          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="49" />
           <folding>
             <element signature="e#16#32#0" expanded="true" />
           </folding>

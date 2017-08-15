@@ -900,33 +900,33 @@ object Jxdr {
     def apply(jsonxdr: String): Option[Jxdr] = {
         import Jobject._
 
-        val j = Jobject(jsonxdr)
-        if (null == j) {
-            return None
+        try {
+            val j = Jobject(jsonxdr)
+            val x = new Jxdr()
+
+            x.j2Root(j)
+            x.j2App(jobject(j, "App"))
+            x.j2Conn(jobject(j, "Conn"))
+            x.j2ConnSt(jobject(j, "ConnSt"))
+            x.j2ConnTm(jobject(j, "ConnTm"))
+
+            if (TCP == x.conn.proto) {
+                x.j2Tcp(j)
+            }
+
+            x.appid match {
+                case HTTP => x.j2Http(jobject(j, "Http"))
+                case DNS => x.j2Dns(jobject(j, "Dns"))
+                case SSL => x.j2Ssl(jobject(j, "Ssl"))
+                case FTP => x.j2Ftp(jobject(j, "Ftp"))
+                case SIP => x.j2Sip(jobject(j, "Sip"))
+                case MAIL => x.j2Mail(jobject(j, "Mail"))
+                case RTSP => x.j2Rtsp(jobject(j, "Rtsp"))
+            }
+
+            Some(x)
+        } catch {
+            case _: Any => None
         }
-
-        val x = new Jxdr()
-
-        x.j2Root(j)
-        x.j2App(jobject(j, "App"))
-        x.j2Conn(jobject(j, "Conn"))
-        x.j2ConnSt(jobject(j, "ConnSt"))
-        x.j2ConnTm(jobject(j, "ConnTm"))
-
-        if (TCP == x.conn.proto) {
-            x.j2Tcp(j)
-        }
-
-        x.appid match {
-            case HTTP => x.j2Http(jobject(j, "Http"))
-            case DNS => x.j2Dns(jobject(j, "Dns"))
-            case SSL => x.j2Ssl(jobject(j, "Ssl"))
-            case FTP => x.j2Ftp(jobject(j, "Ftp"))
-            case SIP => x.j2Sip(jobject(j, "Sip"))
-            case MAIL => x.j2Mail(jobject(j, "Mail"))
-            case RTSP => x.j2Rtsp(jobject(j, "Rtsp"))
-        }
-
-        Some(x)
     }
 }
