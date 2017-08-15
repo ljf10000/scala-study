@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="414fc68a-7e79-4dc1-bd43-5b60a8c3ddd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/jkafka-build.iml" afterPath="$PROJECT_DIR$/.idea/modules/jkafka-build.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/jkafka.iml" afterPath="$PROJECT_DIR$/.idea/modules/jkafka.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" afterPath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
@@ -49,8 +48,8 @@
       <file leaf-file-name="Jkafka.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="598">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#16#32#0" expanded="true" />
               </folding>
@@ -467,7 +466,7 @@
     </configuration>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1502686075151" />
+    <option name="lastUpdateTimestamp" value="1502765337820" />
     <option name="availableProjects">
       <map>
         <entry>
@@ -908,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="598">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#16#32#0" expanded="true" />
           </folding>
