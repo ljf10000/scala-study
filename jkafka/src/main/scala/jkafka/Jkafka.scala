@@ -1,6 +1,6 @@
 package jkafka
 
-import com.byzoro.xdr.{Jxdr, Jschema}
+import com.byzoro.xdr.Jxdr
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{Row, SQLContext}
@@ -32,7 +32,7 @@ object Jkafka {
             val rowRdd = rdd.map(pair => Row(Jxdr(pair._2)))
             //val rowRdd = rdd.map(pair => Jxdr(pair._2))
             val sqlContext = new SQLContext(rdd.sparkContext)
-            val df = sqlContext.createDataFrame(rowRdd, Jschema.root)
+            val df = sqlContext.createDataFrame(rowRdd, Jxdr.schema.root)
 
             df.write.mode("append").parquet(savePath)
         }
