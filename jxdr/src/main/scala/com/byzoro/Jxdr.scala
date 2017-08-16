@@ -1,4 +1,4 @@
-package jxdr
+package com.byzoro
 
 import com.alibaba.fastjson.{JSON, JSONArray, JSONObject}
 import org.apache.spark.sql.types._
