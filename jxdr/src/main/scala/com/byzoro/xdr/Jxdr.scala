@@ -2,7 +2,6 @@ package com.byzoro.xdr
 
 import com.alibaba.fastjson.{JSONArray, JSONObject}
 import com.byzoro.json.{Jobject, Jarray}
-import org.apache.spark.sql.types._
 
 class Jxdr {
 
@@ -114,8 +113,6 @@ class Jxdr {
                     sip: String,
                     dip: String)
 
-    var conn: Conn = _
-
     private def j2Conn(j: JSONObject): Unit = {
         if (null == j) {
             throw jexception("without conn")
@@ -135,8 +132,6 @@ class Jxdr {
 
     case class ConnTm(start: time_t, stop: time_t)
 
-    var conn_tm: ConnTm = _
-
     private def j2ConnTm(j: JSONObject): Unit = {
         if (null == j) {
             throw jexception("without conn time")
@@ -153,8 +148,6 @@ class Jxdr {
                       ip_packet_down: uint32_t,
                       ip_frag_up: uint32_t,
                       ip_frag_down: uint32_t)
-
-    var conn_st: ConnSt = _
 
     private def j2ConnSt(j: JSONObject): Unit = {
         if (null == j) {
@@ -195,8 +188,6 @@ class Jxdr {
             Jxdr.TCP_COMPLETE == this.report_flag
         }
     }
-
-    var tcp: Option[Tcp] = _
 
     private def j2Tcp(j: JSONObject): Unit = {
         if (null != j) {
@@ -249,8 +240,6 @@ class Jxdr {
                     brower: uint8_t,
                     portal: uint8_t)
 
-    var http: Option[Http] = _
-
     private def j2Http(j: JSONObject): Unit = {
         if (null != j) {
             val file_request = jobject(j, "RequestLocation")
@@ -295,8 +284,6 @@ class Jxdr {
                    bye: Boolean,
                    invite: Boolean)
 
-    var sip: Option[Sip] = _
-
     private def j2Sip(j: JSONObject): Unit = {
         if (null != j) {
             sip = Some(Sip(
@@ -325,8 +312,6 @@ class Jxdr {
                     count_audio: uint16_t,
                     describe_delay: uint32_t)
 
-    var rtsp: Option[Rtsp] = _
-
     private def j2Rtsp(j: JSONObject): Unit = {
         if (null != j) {
             rtsp = Some(Rtsp(
@@ -352,8 +337,6 @@ class Jxdr {
                    response_delay: duration_t,
                    trans_duration: duration_t)
 
-    var ftp: Option[Ftp] = _
-
     private def j2Ftp(j: JSONObject): Unit = {
         if (null != j) {
             ftp = Some(Ftp(
@@ -377,8 +360,6 @@ class Jxdr {
                     sender: String,
                     recver: String,
                     hdr: String)
-
-    var mail: Option[Mail] = _
 
     private def j2Mail(j: JSONObject): Unit = {
         if (null != j) {
@@ -406,8 +387,6 @@ class Jxdr {
                    domain: String,
                    ip: String,
                    ips: Array[String])
-
-    var dns: Option[Dns] = _
 
     private def j2dns_ips(j: JSONArray): Array[String] = {
         if (null == j) {
@@ -445,8 +424,6 @@ class Jxdr {
                    server: Option[SslEndpoint],
                    client: Option[SslEndpoint])
 
-    var ssl: Option[Ssl] = _
-
     private def j2Ssl(j: JSONObject): Unit = {
         if (null != j) {
             val server = jobject(j, "Server")
@@ -462,8 +439,6 @@ class Jxdr {
     // not use json ProtoInfo/ClassId/Proto
     case class App(status: uint8_t, local: String, file: Option[BigFile])
 
-    var app: Option[App] = _
-
     private def j2App(j: JSONObject): Unit = {
         if (null != j) {
             val file = jobject(j, "FileLocation")
@@ -475,16 +450,6 @@ class Jxdr {
         }
     }
 
-    var vender: String = _
-    var id: Int = _
-    var ipv4: Boolean = true
-    var appid: uint8_t = _
-    var Type: Int = Jxdr.XDR_NORMAL
-    var time: time_t = _
-
-    // not in json
-    var ip_proto: uint8_t = Jxdr.TCP
-
     private def j2Root(j: JSONObject): Unit = {
         this.vender = Jobject.jstring(j, "Vendor")
         this.id = Jobject.jint(j, "Id")
@@ -495,6 +460,29 @@ class Jxdr {
     }
 
     // not use json ConnEx/ServSt/Vpn/Proxy/QQ
+
+    // not in json
+    var ip_proto: uint8_t = Jxdr.TCP
+
+    var vender: String = _
+    var id: Int = _
+    var ipv4: Boolean = true
+    var appid: uint8_t = _
+    var Type: Int = Jxdr.XDR_NORMAL
+    var time: time_t = _
+
+    var conn: Conn = _
+    var conn_tm: ConnTm = _
+    var conn_st: ConnSt = _
+    var tcp: Option[Tcp] = _
+    var http: Option[Http] = _
+    var sip: Option[Sip] = _
+    var rtsp: Option[Rtsp] = _
+    var ftp: Option[Ftp] = _
+    var mail: Option[Mail] = _
+    var dns: Option[Dns] = _
+    var ssl: Option[Ssl] = _
+    var app: Option[App] = _
 }
 
 object Jxdr {
@@ -588,211 +576,6 @@ object Jxdr {
     val BROWSER_OPERA = 9
     val BROWSER_SAFARI = 10
     */
-
-    val BIGFILE_SCHEMA = StructType(List(
-        StructField("File", DataTypes.StringType, false),
-        StructField("Size", DataTypes.IntegerType, false),
-        StructField("Offset", DataTypes.IntegerType, false),
-        StructField("Signature", DataTypes.StringType, false)
-    ))
-
-    val SMALLFILE_SCHEMA = StructType(List(
-        StructField("DbName", DataTypes.StringType, false),
-        StructField("TableName", DataTypes.StringType, false),
-        StructField("Signature", DataTypes.StringType, false)
-    ))
-
-    val CERT_SCHEMA = StructType(List(
-        StructField("FileLocation", SMALLFILE_SCHEMA, false),
-
-        StructField("Version", DataTypes.IntegerType),
-        StructField("SerialNumber", DataTypes.StringType),
-        StructField("KeyUsage", DataTypes.IntegerType),
-        StructField("NotBefore", DataTypes.LongType),
-        StructField("NotAfter", DataTypes.LongType),
-        StructField("CountryName", DataTypes.StringType),
-        StructField("OrganizationName", DataTypes.StringType),
-        StructField("OrganizationUnitName", DataTypes.StringType),
-        StructField("CommonName", DataTypes.StringType)
-    ))
-
-    val CERTS_SCHEMA: ArrayType = DataTypes.createArrayType(CERT_SCHEMA, false)
-
-    val SSL_ENDPOINT_SCHEMA = StructType(List(
-        StructField("Verfy", DataTypes.BooleanType, false),
-        StructField("VerfyFailedDesc", DataTypes.StringType),
-        StructField("VerfyFailedIdx", DataTypes.IntegerType),
-        StructField("Cert", CERT_SCHEMA, false),
-        StructField("Certs", CERTS_SCHEMA, false)
-    ))
-
-    val CONN_SCHEMA = StructType(List(
-        StructField("Proto", DataTypes.IntegerType, false),
-        StructField("Sport", DataTypes.IntegerType, false),
-        StructField("Dport", DataTypes.IntegerType, false),
-        StructField("Sip", DataTypes.StringType, false),
-        StructField("Dip", DataTypes.StringType, false)
-    ))
-
-    val CONN_TM_SCHEMA = StructType(List(
-        StructField("Start", DataTypes.LongType, false),
-        StructField("Stop", DataTypes.LongType, false)
-    ))
-
-    val CONN_ST_SCHEMA = StructType(List(
-        StructField("FlowUp", DataTypes.IntegerType, false),
-        StructField("FlowDown", DataTypes.IntegerType, false),
-        StructField("PktUp", DataTypes.IntegerType, false),
-        StructField("PktDown", DataTypes.IntegerType, false),
-        StructField("IpFragUp", DataTypes.IntegerType, false),
-        StructField("IpFragDown", DataTypes.IntegerType, false)
-    ))
-
-    val TCP_SCHEMA = StructType(List(
-        StructField("DisorderUp", DataTypes.IntegerType),
-        StructField("DisorderDown", DataTypes.IntegerType),
-        StructField("RetranUp", DataTypes.IntegerType),
-        StructField("RetranDown", DataTypes.IntegerType),
-        StructField("SynAckDelay", DataTypes.IntegerType),
-        StructField("AckDelay", DataTypes.IntegerType),
-        StructField("ReportFlag", DataTypes.IntegerType),
-        StructField("CloseReason", DataTypes.IntegerType),
-        StructField("FirstRequestDelay", DataTypes.IntegerType),
-        StructField("FirstResponseDely", DataTypes.IntegerType),
-        StructField("Window", DataTypes.IntegerType),
-        StructField("Mss", DataTypes.IntegerType),
-        StructField("SynCount", DataTypes.IntegerType),
-        StructField("SynAckCount", DataTypes.IntegerType),
-        StructField("AckCount", DataTypes.IntegerType),
-        StructField("SessionOK", DataTypes.BooleanType),
-        StructField("Handshake12", DataTypes.BooleanType),
-        StructField("Handshake23", DataTypes.BooleanType),
-        StructField("Open", DataTypes.BooleanType),
-        StructField("Close", DataTypes.BooleanType)
-    ))
-
-    val HTTP_SCHEMA = StructType(List(
-        StructField("Host", DataTypes.StringType),
-        StructField("Url", DataTypes.StringType),
-        StructField("XonlineHost", DataTypes.StringType),
-        StructField("UserAgent", DataTypes.StringType),
-        StructField("ContentType", DataTypes.StringType),
-        StructField("Refer", DataTypes.StringType),
-        StructField("Cookie", DataTypes.StringType),
-        StructField("Location", DataTypes.StringType),
-        StructField("RequestLocation", BIGFILE_SCHEMA),
-        StructField("ResponseLocation", BIGFILE_SCHEMA),
-        StructField("RequestTime", DataTypes.IntegerType),
-        StructField("FirstResponseTime", DataTypes.IntegerType),
-        StructField("LastContentTime", DataTypes.IntegerType),
-        StructField("ServTime", DataTypes.IntegerType),
-        StructField("ContentLen", DataTypes.IntegerType),
-        StructField("StateCode", DataTypes.IntegerType),
-        StructField("Method", DataTypes.IntegerType),
-        StructField("Version", DataTypes.IntegerType),
-        StructField("HeadFlag", DataTypes.BooleanType),
-        StructField("ServFlag", DataTypes.IntegerType),
-        StructField("RequestFlag", DataTypes.BooleanType),
-        StructField("Browser", DataTypes.IntegerType),
-        StructField("Portal", DataTypes.IntegerType)
-    ))
-
-    val SIP_SCHEMA = StructType(List(
-        StructField("CallingNo", DataTypes.StringType),
-        StructField("CalledNo", DataTypes.StringType),
-        StructField("SessionId", DataTypes.StringType),
-        StructField("CallDir", DataTypes.IntegerType),
-        StructField("CallType", DataTypes.IntegerType),
-        StructField("HangupReason", DataTypes.IntegerType),
-        StructField("StreamCount", DataTypes.IntegerType),
-        StructField("Malloc", DataTypes.BooleanType),
-        StructField("Bye", DataTypes.BooleanType),
-        StructField("Invite", DataTypes.BooleanType)
-    ))
-
-    val RTSP_SCHEMA = StructType(List(
-        StructField("Url", DataTypes.StringType),
-        StructField("UserAgent", DataTypes.StringType),
-        StructField("ServerIp", DataTypes.StringType),
-        StructField("ClientBeginPort", DataTypes.IntegerType),
-        StructField("ClientEndPort", DataTypes.IntegerType),
-        StructField("ServerBeginPort", DataTypes.IntegerType),
-        StructField("ServerEndPort", DataTypes.IntegerType),
-        StructField("VideoStreamCount", DataTypes.IntegerType),
-        StructField("AudeoStreamCount", DataTypes.IntegerType),
-        StructField("ResDelay", DataTypes.IntegerType)
-    ))
-
-    val FTP_SCHEMA = StructType(List(
-        StructField("State", DataTypes.IntegerType),
-        StructField("User", DataTypes.StringType),
-        StructField("CurrentDir", DataTypes.StringType),
-        StructField("TransMode", DataTypes.IntegerType),
-        StructField("TransType", DataTypes.IntegerType),
-        StructField("FileCount", DataTypes.IntegerType),
-        StructField("FileSize", DataTypes.IntegerType),
-        StructField("RspTm", DataTypes.IntegerType),
-        StructField("TransTm", DataTypes.IntegerType)
-    ))
-
-    val MAIL_SCHEMA = StructType(List(
-        StructField("MsgType", DataTypes.IntegerType),
-        StructField("RspState", DataTypes.IntegerType),
-        StructField("UserName", DataTypes.StringType),
-        StructField("RecverInfo", DataTypes.StringType),
-        StructField("Len", DataTypes.IntegerType),
-        StructField("DomainInfo", DataTypes.StringType),
-        StructField("RecvAccount", DataTypes.StringType),
-        StructField("Hdr", DataTypes.StringType),
-        StructField("AcsType", DataTypes.IntegerType)
-    ))
-
-    val DNS_IPS_SCHEMA: ArrayType = DataTypes.createArrayType(DataTypes.StringType)
-
-    val DNS_SCHEMA = StructType(List(
-        StructField("Domain", DataTypes.StringType),
-        StructField("IpCount", DataTypes.IntegerType),
-        StructField("IpVersion", DataTypes.IntegerType),
-        StructField("Ip", DataTypes.StringType),
-        StructField("Ips", DNS_IPS_SCHEMA),
-        StructField("RspCode", DataTypes.IntegerType),
-        StructField("ReqCount", DataTypes.IntegerType),
-        StructField("RspRecordCount", DataTypes.IntegerType),
-        StructField("AuthCnttCount", DataTypes.IntegerType),
-        StructField("ExtraRecordCount", DataTypes.IntegerType),
-        StructField("PktValid", DataTypes.BooleanType)
-    ))
-
-    val SSL_SCHEMA = StructType(List(
-        StructField("FailReason", DataTypes.IntegerType),
-        StructField("Server", SSL_ENDPOINT_SCHEMA, false),
-        StructField("Client", SSL_ENDPOINT_SCHEMA)
-    ))
-
-    val APP_SCHEMA = StructType(List(
-        StructField("Status", DataTypes.StringType),
-        StructField("File", DataTypes.StringType),
-        StructField("FileLocation", BIGFILE_SCHEMA)
-    ))
-
-    val SCHEMA = StructType(List(
-        StructField("Class", DataTypes.IntegerType, false),
-        StructField("Ipv4", DataTypes.IntegerType, false),
-        StructField("Time", DataTypes.LongType, false),
-        StructField("Type", DataTypes.IntegerType, false),
-        StructField("App", APP_SCHEMA),
-        StructField("Conn", CONN_SCHEMA, false),
-        StructField("ConnTm", CONN_TM_SCHEMA, false),
-        StructField("ConnSt", CONN_ST_SCHEMA, false),
-        StructField("Tcp", TCP_SCHEMA),
-        StructField("Http", HTTP_SCHEMA),
-        StructField("Dns", DNS_SCHEMA),
-        StructField("Ssl", SSL_SCHEMA),
-        StructField("Ftp", FTP_SCHEMA),
-        StructField("Sip", SIP_SCHEMA),
-        StructField("Mail", MAIL_SCHEMA),
-        StructField("Rtsp", RTSP_SCHEMA)
-    ))
 
     def apply(jsonxdr: String): Option[Jxdr] = {
         import Jobject._

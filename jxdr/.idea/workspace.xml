@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c687615-a1ef-4243-869d-89bdb52a1dd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka/Jkafka.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jkafka/src/main/scala/com/byzoro/Jkafka.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,14 +33,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jxdr.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Jxdr.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="e#24#75#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Jschema.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jschema.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,6 +97,8 @@
       <find>JObject</find>
       <find>JArray</find>
       <find>obj</find>
+      <find>BIGFILE_SCHEMA</find>
+      <find>SCHEMA</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -96,6 +107,8 @@
       <replace>JSON</replace>
       <replace>Jobject</replace>
       <replace>Jarray</replace>
+      <replace>bigfile</replace>
+      <replace>root</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -120,6 +133,7 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/byzoro/json/Jarray.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/byzoro/json/Jobject.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jschema.scala" />
       </list>
     </option>
   </component>
@@ -615,14 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/StructField.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.alibaba/fastjson/srcs/fastjson-1.2.35-sources.jar!/com/alibaba/fastjson/JSONArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4347">
@@ -752,13 +758,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.1.1-sources.jar!/org/apache/spark/sql/types/StructField.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="e#24#75#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jschema.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

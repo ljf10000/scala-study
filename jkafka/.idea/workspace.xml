@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="414fc68a-7e79-4dc1-bd43-5b60a8c3ddd2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/byzoro/Jkafka.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/src/main/scala/com/byzoro/xdr/Jxdr.scala" afterPath="$PROJECT_DIR$/../jxdr/src/main/scala/com/byzoro/xdr/Jxdr.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
