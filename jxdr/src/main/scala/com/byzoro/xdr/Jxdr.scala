@@ -2,6 +2,7 @@ package com.byzoro.xdr
 
 import com.alibaba.fastjson.{JSONArray, JSONObject}
 import com.byzoro.json.{Jobject, Jarray}
+import org.apache.spark.sql.types._
 
 class Jxdr {
 
@@ -185,7 +186,7 @@ class Jxdr {
                    open_status: Int,
                    close_status: Int) {
         def is_complete(): Boolean = {
-            Jxdr.TCP_COMPLETE == this.report_flag
+            Jxdr.const.tcp.complete == this.report_flag
         }
     }
 
@@ -451,24 +452,24 @@ class Jxdr {
     }
 
     private def j2Root(j: JSONObject): Unit = {
-        this.vender = Jobject.jstring(j, "Vendor")
-        this.id = Jobject.jint(j, "Id")
-        this.ipv4 = Jobject.jbool(j, "Ipv4")
-        this.appid = Jobject.jint(j, "Class")
-        this.Type = Jobject.jint(j, "Type")
-        this.time = Jobject.jlong(j, "Time")
+        vender = Jobject.jstring(j, "Vendor")
+        id = Jobject.jint(j, "Id")
+        ipv4 = Jobject.jbool(j, "Ipv4")
+        appid = Jobject.jint(j, "Class")
+        Type = Jobject.jint(j, "Type")
+        time = Jobject.jlong(j, "Time")
     }
 
     // not use json ConnEx/ServSt/Vpn/Proxy/QQ
 
     // not in json
-    var ip_proto: uint8_t = Jxdr.TCP
+    var ip_proto: uint8_t = Jxdr.const.conn.proto.tcp
 
     var vender: String = _
     var id: Int = _
     var ipv4: Boolean = true
     var appid: uint8_t = _
-    var Type: Int = Jxdr.XDR_NORMAL
+    var Type: Int = Jxdr.const.Type.normal
     var time: time_t = _
 
     var conn: Conn = _
@@ -486,96 +487,328 @@ class Jxdr {
 }
 
 object Jxdr {
-    val TCP_COMPLETE = 1
+    object const {
 
-    val TCP_OPEN_SUCCESS = 0
-    val TCP_OPEN_SYN = 1
-    val TCP_OPEN_SYNACK = 2
+        object tcp {
+            val complete = 1
 
-    val TCP_CLOSE_FIN = 0
-    val TCP_CLOSE_CLIENT_RST = 1
-    val TCP_CLOSE_SERVER_RST = 2
-    val TCP_CLOSE_TIMEOUT = 3
+            object open {
+                val sucess = 0
+                val syn = 1
+                val synack = 2
+            }
 
-    // type
-    val XDR_NORMAL = 0
-    val XDR_FILE = 1
-    val XDR_HTTP = 2
-    val XDR_CERT = 3
+            object close {
+                val fin = 0
+                val client_rst = 1
+                val server_rst = 2
+                val timeout = 3
+            }
 
-    // conn.proto
-    val ICMP = 1
-    val TCP = 6
-    val UDP = 17
+        }
 
-    // appid
-    val COMMON = 100
-    val DNS = 101
-    val MMS = 102
-    val HTTP = 103
-    val FTP = 104
-    val MAIL = 105
-    val SIP = 106
-    val RTSP = 107
-    val P2P = 108
-    val VIDEO = 109
-    val IM = 110
-    val SSL = 111
+        // type
+        object Type {
+            val normal = 0
+            val file = 1
+            val http = 2
+            val cert = 3
+        }
 
-    // app.status
-    val APP_SUCCESS = 0
-    val APP_SYN = 1
-    val APP_SYN_ACK = 2
-    val APP_TIMEOUT = 3
-    val APP_SERVER_REJECT = 4
-    val APP_CLIENT_REJECT = 5
-    val APP_SERVER_RST = 6
-    val APP_CLIENT_RST = 7
+        object conn {
 
-    // http.version
-    /*
-    val HTTP_09 = 1
-    val HTTP_10 = 2
-    val HTTP_11 = 3
-    val HTTP_20 = 4
-    val WAP_10 = 5
-    val WAP_11 = 6
-    val WAP_12 = 7
-    */
+            object proto {
+                val icmp = 1
+                val tcp = 6
+                val udp = 17
+            }
 
-    // http.service
-    /*
-    val HTTP_SERVICE_SUCCESS = 0
-    val HTTP_SERVICE_FAIL = 1
-    val HTTP_SERVICE_UNKNOW = 2
-    val HTTP_SERVICE_COMPLETE = 3
-    */
+        }
 
-    // http.portal
-    /*
-    val PORTAL_TENCENT = 1
-    val PORTAL_TAOBAO = 2
-    val PORTAL_SINA = 3
-    val PORTAL_163 = 4
-    val PORTAL_MOBILE = 5
-    val PORTAL_SOHU = 6
-    val PORTAL_IFENG = 7
-    val PORTAL_BAIDU = 8
-    */
+        object appid {
+            val common = 100
+            val dns = 101
+            val mms = 102
+            val http = 103
+            val ftp = 104
+            val mail = 105
+            val sip = 106
+            val rtsp = 107
+            val p2p = 108
+            val video = 109
+            val im = 110
+            val ssl = 111
+        }
 
-    // http.browser
-    /*
-    val BROWSER_UC = 1
-    val BROWSER_QQ = 2
-    val BROWSER_360 = 3
-    val BROWSER_SKYFIRE = 4
-    val BROWSER_UBUNTU = 5
-    val BROWSER_BAIDU = 6
-    val BROWSER_CHROME = 7
-    val BROWSER_FFIREFOX = 8
-    val BROWSER_OPERA = 9
-    val BROWSER_SAFARI = 10
-    */
+        // app.status
+        object app {
+
+            object status {
+                val sucess = 0
+                val syn = 1
+                val syn_ack = 2
+                val timeout = 3
+                val server_reject = 4
+                val client_reject = 5
+                val server_rst = 6
+                val client_rst = 7
+            }
+
+        }
+
+        object http {
+
+            object version {
+                val http_09 = 1
+                val http_10 = 2
+                val http_11 = 3
+                val http_20 = 4
+                val wap_10 = 5
+                val wap_11 = 6
+                val wap_12 = 7
+            }
+
+            object service {
+                val sucess = 0
+                val fail = 1
+                val unknow = 2
+                val complete = 3
+            }
+
+            object portal {
+                val tencent = 1
+                val taobao = 2
+                val sina = 3
+                val N163 = 4
+                val mobile = 5
+                val sohu = 6
+                val ifeng = 7
+                val baidu = 8
+            }
+
+            object browser {
+                val uc = 1
+                val qq = 2
+                val N360 = 3
+                val skyfire = 4
+                val ubuntu = 5
+                val baidu = 6
+                val chrome = 7
+                val firefox = 8
+                val opera = 9
+                val safari = 10
+            }
+
+        }
+
+    }
+
+    object schema {
+        val bigfile = StructType(List(
+            StructField("File", DataTypes.StringType, false),
+            StructField("Size", DataTypes.IntegerType, false),
+            StructField("Offset", DataTypes.IntegerType, false),
+            StructField("Signature", DataTypes.StringType, false)
+        ))
+
+        val smallfile = StructType(List(
+            StructField("DbName", DataTypes.StringType, false),
+            StructField("TableName", DataTypes.StringType, false),
+            StructField("Signature", DataTypes.StringType, false)
+        ))
+
+        val cert = StructType(List(
+            StructField("FileLocation", smallfile, false),
+
+            StructField("Version", DataTypes.IntegerType),
+            StructField("SerialNumber", DataTypes.StringType),
+            StructField("KeyUsage", DataTypes.IntegerType),
+            StructField("NotBefore", DataTypes.LongType),
+            StructField("NotAfter", DataTypes.LongType),
+            StructField("CountryName", DataTypes.StringType),
+            StructField("OrganizationName", DataTypes.StringType),
+            StructField("OrganizationUnitName", DataTypes.StringType),
+            StructField("CommonName", DataTypes.StringType)
+        ))
+
+        val certs: ArrayType = DataTypes.createArrayType(cert, false)
+
+        val ssl_endpoint = StructType(List(
+            StructField("Verfy", DataTypes.BooleanType, false),
+            StructField("VerfyFailedDesc", DataTypes.StringType),
+            StructField("VerfyFailedIdx", DataTypes.IntegerType),
+            StructField("Cert", cert, false),
+            StructField("Certs", certs, false)
+        ))
+
+        val conn = StructType(List(
+            StructField("Proto", DataTypes.IntegerType, false),
+            StructField("Sport", DataTypes.IntegerType, false),
+            StructField("Dport", DataTypes.IntegerType, false),
+            StructField("Sip", DataTypes.StringType, false),
+            StructField("Dip", DataTypes.StringType, false)
+        ))
+
+        val conn_tm = StructType(List(
+            StructField("Start", DataTypes.LongType, false),
+            StructField("Stop", DataTypes.LongType, false)
+        ))
+
+        val conn_st = StructType(List(
+            StructField("FlowUp", DataTypes.IntegerType, false),
+            StructField("FlowDown", DataTypes.IntegerType, false),
+            StructField("PktUp", DataTypes.IntegerType, false),
+            StructField("PktDown", DataTypes.IntegerType, false),
+            StructField("IpFragUp", DataTypes.IntegerType, false),
+            StructField("IpFragDown", DataTypes.IntegerType, false)
+        ))
+
+        val tcp = StructType(List(
+            StructField("DisorderUp", DataTypes.IntegerType),
+            StructField("DisorderDown", DataTypes.IntegerType),
+            StructField("RetranUp", DataTypes.IntegerType),
+            StructField("RetranDown", DataTypes.IntegerType),
+            StructField("SynAckDelay", DataTypes.IntegerType),
+            StructField("AckDelay", DataTypes.IntegerType),
+            StructField("ReportFlag", DataTypes.IntegerType),
+            StructField("CloseReason", DataTypes.IntegerType),
+            StructField("FirstRequestDelay", DataTypes.IntegerType),
+            StructField("FirstResponseDely", DataTypes.IntegerType),
+            StructField("Window", DataTypes.IntegerType),
+            StructField("Mss", DataTypes.IntegerType),
+            StructField("SynCount", DataTypes.IntegerType),
+            StructField("SynAckCount", DataTypes.IntegerType),
+            StructField("AckCount", DataTypes.IntegerType),
+            StructField("SessionOK", DataTypes.BooleanType),
+            StructField("Handshake12", DataTypes.BooleanType),
+            StructField("Handshake23", DataTypes.BooleanType),
+            StructField("Open", DataTypes.BooleanType),
+            StructField("Close", DataTypes.BooleanType)
+        ))
+
+        val http = StructType(List(
+            StructField("Host", DataTypes.StringType),
+            StructField("Url", DataTypes.StringType),
+            StructField("XonlineHost", DataTypes.StringType),
+            StructField("UserAgent", DataTypes.StringType),
+            StructField("ContentType", DataTypes.StringType),
+            StructField("Refer", DataTypes.StringType),
+            StructField("Cookie", DataTypes.StringType),
+            StructField("Location", DataTypes.StringType),
+            StructField("RequestLocation", bigfile),
+            StructField("ResponseLocation", bigfile),
+            StructField("RequestTime", DataTypes.IntegerType),
+            StructField("FirstResponseTime", DataTypes.IntegerType),
+            StructField("LastContentTime", DataTypes.IntegerType),
+            StructField("ServTime", DataTypes.IntegerType),
+            StructField("ContentLen", DataTypes.IntegerType),
+            StructField("StateCode", DataTypes.IntegerType),
+            StructField("Method", DataTypes.IntegerType),
+            StructField("Version", DataTypes.IntegerType),
+            StructField("HeadFlag", DataTypes.BooleanType),
+            StructField("ServFlag", DataTypes.IntegerType),
+            StructField("RequestFlag", DataTypes.BooleanType),
+            StructField("Browser", DataTypes.IntegerType),
+            StructField("Portal", DataTypes.IntegerType)
+        ))
+
+        val sip = StructType(List(
+            StructField("CallingNo", DataTypes.StringType),
+            StructField("CalledNo", DataTypes.StringType),
+            StructField("SessionId", DataTypes.StringType),
+            StructField("CallDir", DataTypes.IntegerType),
+            StructField("CallType", DataTypes.IntegerType),
+            StructField("HangupReason", DataTypes.IntegerType),
+            StructField("StreamCount", DataTypes.IntegerType),
+            StructField("Malloc", DataTypes.BooleanType),
+            StructField("Bye", DataTypes.BooleanType),
+            StructField("Invite", DataTypes.BooleanType)
+        ))
+
+        val rtsp = StructType(List(
+            StructField("Url", DataTypes.StringType),
+            StructField("UserAgent", DataTypes.StringType),
+            StructField("ServerIp", DataTypes.StringType),
+            StructField("ClientBeginPort", DataTypes.IntegerType),
+            StructField("ClientEndPort", DataTypes.IntegerType),
+            StructField("ServerBeginPort", DataTypes.IntegerType),
+            StructField("ServerEndPort", DataTypes.IntegerType),
+            StructField("VideoStreamCount", DataTypes.IntegerType),
+            StructField("AudeoStreamCount", DataTypes.IntegerType),
+            StructField("ResDelay", DataTypes.IntegerType)
+        ))
+
+        val ftp = StructType(List(
+            StructField("State", DataTypes.IntegerType),
+            StructField("User", DataTypes.StringType),
+            StructField("CurrentDir", DataTypes.StringType),
+            StructField("TransMode", DataTypes.IntegerType),
+            StructField("TransType", DataTypes.IntegerType),
+            StructField("FileCount", DataTypes.IntegerType),
+            StructField("FileSize", DataTypes.IntegerType),
+            StructField("RspTm", DataTypes.IntegerType),
+            StructField("TransTm", DataTypes.IntegerType)
+        ))
+
+        val mail = StructType(List(
+            StructField("MsgType", DataTypes.IntegerType),
+            StructField("RspState", DataTypes.IntegerType),
+            StructField("UserName", DataTypes.StringType),
+            StructField("RecverInfo", DataTypes.StringType),
+            StructField("Len", DataTypes.IntegerType),
+            StructField("DomainInfo", DataTypes.StringType),
+            StructField("RecvAccount", DataTypes.StringType),
+            StructField("Hdr", DataTypes.StringType),
+            StructField("AcsType", DataTypes.IntegerType)
+        ))
+
+        val dns_ips: ArrayType = DataTypes.createArrayType(DataTypes.StringType)
+
+        val dns = StructType(List(
+            StructField("Domain", DataTypes.StringType),
+            StructField("IpCount", DataTypes.IntegerType),
+            StructField("IpVersion", DataTypes.IntegerType),
+            StructField("Ip", DataTypes.StringType),
+            StructField("Ips", dns_ips),
+            StructField("RspCode", DataTypes.IntegerType),
+            StructField("ReqCount", DataTypes.IntegerType),
+            StructField("RspRecordCount", DataTypes.IntegerType),
+            StructField("AuthCnttCount", DataTypes.IntegerType),
+            StructField("ExtraRecordCount", DataTypes.IntegerType),
+            StructField("PktValid", DataTypes.BooleanType)
+        ))
+
+        val ssl = StructType(List(
+            StructField("FailReason", DataTypes.IntegerType),
+            StructField("Server", ssl_endpoint, false),
+            StructField("Client", ssl_endpoint)
+        ))
+
+        val app = StructType(List(
+            StructField("Status", DataTypes.StringType),
+            StructField("File", DataTypes.StringType),
+            StructField("FileLocation", bigfile)
+        ))
+
+        val root = StructType(List(
+            StructField("Class", DataTypes.IntegerType, false),
+            StructField("Ipv4", DataTypes.IntegerType, false),
+            StructField("Time", DataTypes.LongType, false),
+            StructField("Type", DataTypes.IntegerType, false),
+            StructField("App", app),
+            StructField("Conn", conn, false),
+            StructField("ConnTm", conn_tm, false),
+            StructField("ConnSt", conn_st, false),
+            StructField("Tcp", tcp),
+            StructField("Http", http),
+            StructField("Dns", dns),
+            StructField("Ssl", ssl),
+            StructField("Ftp", ftp),
+            StructField("Sip", sip),
+            StructField("Mail", mail),
+            StructField("Rtsp", rtsp)
+        ))
+    }
 
     def apply(jsonxdr: String): Option[Jxdr] = {
         import Jobject._
@@ -590,18 +823,18 @@ object Jxdr {
             x.j2ConnSt(jobject(j, "ConnSt"))
             x.j2ConnTm(jobject(j, "ConnTm"))
 
-            if (TCP == x.conn.proto) {
+            if (const.conn.proto.tcp == x.conn.proto) {
                 x.j2Tcp(j)
             }
 
             x.appid match {
-                case HTTP => x.j2Http(jobject(j, "Http"))
-                case DNS => x.j2Dns(jobject(j, "Dns"))
-                case SSL => x.j2Ssl(jobject(j, "Ssl"))
-                case FTP => x.j2Ftp(jobject(j, "Ftp"))
-                case SIP => x.j2Sip(jobject(j, "Sip"))
-                case MAIL => x.j2Mail(jobject(j, "Mail"))
-                case RTSP => x.j2Rtsp(jobject(j, "Rtsp"))
+                case const.appid.http => x.j2Http(jobject(j, "Http"))
+                case const.appid.dns => x.j2Dns(jobject(j, "Dns"))
+                case const.appid.ssl => x.j2Ssl(jobject(j, "Ssl"))
+                case const.appid.ftp => x.j2Ftp(jobject(j, "Ftp"))
+                case const.appid.sip => x.j2Sip(jobject(j, "Sip"))
+                case const.appid.mail => x.j2Mail(jobject(j, "Mail"))
+                case const.appid.rtsp => x.j2Rtsp(jobject(j, "Rtsp"))
             }
 
             Some(x)
@@ -609,4 +842,5 @@ object Jxdr {
             case _: Any => None
         }
     }
+
 }
