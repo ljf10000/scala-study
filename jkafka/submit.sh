@@ -16,7 +16,7 @@ readonly BROKERS="192.168.1.103:9092\
 
 readonly JARS=${SPARK_EXT}/${JAR_SPARK_STREAMING_KAFKA},${JAR_JXDR}
 #readonly JARS=${JAR_JXDR}
-readonly PARQUET_PATH='/test/parquet/jkafka'
+readonly PARQUET_PATH='./jkafka-parquet'
 
 echo "TOPICS=${TOPICS}"
 echo "BROKERS=${BROKERS}"
