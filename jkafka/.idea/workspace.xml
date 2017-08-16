@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="414fc68a-7e79-4dc1-bd43-5b60a8c3ddd2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/byzoro/Jkafka.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../jxdr/src/main/scala/com/byzoro/json/Jarray.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../jxdr/src/main/scala/com/byzoro/json/Jobject.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/byzoro/Jkafka.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jxdr/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../jxdr/src/main/scala/com/byzoro/Jxdr.scala" afterPath="$PROJECT_DIR$/../jxdr/src/main/scala/com/byzoro/xdr/Jxdr.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,12 +45,12 @@
         </entry>
       </file>
       <file leaf-file-name="Jkafka.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/Jkafka.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="23">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <element signature="e#20#57#0" expanded="true" />
+                <element signature="e#16#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +80,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/scala/jkafka.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/byzoro/Jkafka.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala" />
       </list>
     </option>
   </component>
@@ -149,7 +145,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="byzoro" type="462c0819:PsiDirectoryNode" />
+              <item name="jkafka" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -910,14 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="692">
@@ -928,10 +916,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/Jkafka.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/jkafka/Jkafka.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#20#57#0" expanded="true" />
+            <element signature="e#16#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

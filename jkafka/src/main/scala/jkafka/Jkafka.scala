@@ -1,5 +1,6 @@
-package com.byzoro
+package jkafka
 
+import com.byzoro.xdr.Jxdr
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{Row, SQLContext}

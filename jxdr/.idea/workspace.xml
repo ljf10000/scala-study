@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c687615-a1ef-4243-869d-89bdb52a1dd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../jkafka/src/main/scala/com/byzoro/Jkafka.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/byzoro/json/Jarray.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/byzoro/json/Jobject.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka/Jkafka.scala" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../jkafka/src/main/scala/jkafka/Jkafka.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../jkafka/src/main/scala/com/byzoro/Jkafka.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../jkafka/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/byzoro/Jxdr.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +37,8 @@
       <file leaf-file-name="Jxdr.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding>
                 <element signature="e#24#75#0" expanded="true" />
               </folding>
@@ -758,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/byzoro/xdr/Jxdr.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
             <element signature="e#24#75#0" expanded="true" />
           </folding>
